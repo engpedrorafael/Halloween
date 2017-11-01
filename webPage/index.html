@@ -1,0 +1,70 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="icon" href="http://icons.iconarchive.com/icons/hopstarter/halloween-avatars/256/Pumpkin-icon.png">
+    <title>Halloween</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script>
+        function action(attr){
+            jQuery.get('http://192.168.2.130/cgi-bin/page.cgi?action='+attr);
+        }
+    
+        function sound(attr){
+            jQuery.get('http://192.168.2.130/cgi-bin/page.cgi?sound='+attr);
+        }
+        function stop(attr){
+            jQuery.get('http://192.168.2.130/cgi-bin/page.cgi?stop='+attr);
+        }
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  <body>
+
+<table style="width:100%">
+  <tr>
+    <td style="height:50px;"></td>
+  </tr>
+  <tr>
+    <td align="center"><input style="width:200px" type="image" src="https://cdn2.iconfinder.com/data/icons/storytime-3/60/story-time-ultra-025-door-512.png" onclick="sound('porta')"</td>
+    <td align="center"><input style="width:200px" type="image" src="https://orig00.deviantart.net/6bfa/f/2015/100/8/0/grey_wolf_icon_by_graveyardchaos-d8p75bc.png" onclick="sound('lobo')"</td>
+    <td align="center"><input style="width:200px" type="image" src="http://icons.iconarchive.com/icons/large-icons/large-weather/256/thunder-icon.png" onclick="sound('trovao')"</td>
+  </tr>
+  <tr>
+    <td style="height:100px;"></td> 
+  </tr>
+
+  <tr>
+    <td align="center"><input style="width:200px" type="image" src="https://orig00.deviantart.net/9d9d/f/2012/101/a/2/scarygirl_icon_v2_0_by_ni8crawler-d4vrtis.png" onclick="sound('rapariga')"</td>
+    <td align="center"><input style="width:200px" type="image" src="http://www.mascotdesigngallery.com/wp/wp-content/uploads/2013/08/green_monster_by_fokito82-d58rbr0.png" onclick="sound('riso')"</td>
+    <td align="center"><input style="width:200px" type="image" src="http://www.mascotdesigngallery.com/wp/wp-content/uploads/2014/05/cartoon-monster-11.jpg" onclick="sound('risoagudo')"</td>
+  </tr>
+  <tr>
+    <td style="height:100px;"></td>
+  </tr>
+
+  <tr>
+    <td align="center"><input style="width:200px" type="image" src="https://www.iconexperience.com/_img/v_collection_png/512x512/shadow/lightbulb_on.png" onclick="action('on')"</td>
+    <td align="center"><input style="width:200px" type="image" src="http://debanked.com/wp-content/uploads/2015/11/10802304_S.jpg" onclick="action('walk')"</td>
+    <td align="center"><input style="width:200px" type="image" src="http://img.freepik.com/free-psd/stage-spotlight-icon-psd_30-2526.jpg?size=338&ext=jpg" onclick="action('flash')"</td>
+  </tr>
+  <tr>
+    <td style="height:100px;"></td>
+  </tr>
+
+</table>
+
+<table style="width:100%">
+  <tr>
+    <td align="center"><input style="width:200px" type="image" src="https://iconalone.com/sites/default/files/styles/220x220/public/No%20flash%20sign.svg_0.png?itok=P8DEbvZj" onclick="stop('action')"</td>
+    <td align="center"><input style="width:200px" type="image" src="https://i0.wp.com/ajournalofmusicalthings.com/wp-content/uploads/Quiet.png?resize=300%2C300" onclick="stop('sound')"</td>
+  </tr>
+  <tr>
+    <td style="height:100px;"></td>
+  </tr>
+</table>
+
+  </body>
+
+</html>
+
