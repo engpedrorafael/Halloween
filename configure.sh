@@ -18,6 +18,10 @@ sudo cp webPage/page.cgi /usr/lib/cgi-bin
 sudo chmod 755 /usr/lib/cgi-bin
 sudo chown root.root /usr/lib/cgi-bin
 sudo chmod 775 /usr/lib/cgi-bin/page.cgi
+sudo cp webPage/index.html /var/www/html/
+sudo chown www-data.www-data /var/www/html/index.html
+
+echo "Restarting apache..."
 sudo a2enmod cgi
 sudo service apache2 restart
 
