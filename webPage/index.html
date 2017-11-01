@@ -7,14 +7,14 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script>
         function action(attr){
-            jQuery.get('http://192.168.2.130/cgi-bin/page.cgi?action='+attr);
+            jQuery.get('http://%IP%/cgi-bin/page.cgi?action='+attr);
         }
     
         function sound(attr){
-            jQuery.get('http://192.168.2.130/cgi-bin/page.cgi?sound='+attr);
+            jQuery.get('http://%IP%/cgi-bin/page.cgi?sound='+attr);
         }
         function stop(attr){
-            jQuery.get('http://192.168.2.130/cgi-bin/page.cgi?stop='+attr);
+            jQuery.get('http://%IP%/cgi-bin/page.cgi?stop='+attr);
         }
     </script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
