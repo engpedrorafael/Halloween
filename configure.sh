@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Installing dependencies..."
-sudo apt-get update
+#sudo apt-get update
 sudo apt-get install vim vlc apache2
 sudo usermod -aG dialout www-data
 sudo usermod -aG sudo www-data
@@ -20,8 +20,8 @@ sudo chmod 755 /usr/lib/cgi-bin
 sudo chown root.root /usr/lib/cgi-bin
 sudo chmod 775 /usr/lib/cgi-bin/page.cgi
 
-cat webPage/index.html | sed "s#%IP%#$(hostname -I)#g" > webPage/index.html_installed
-sudo cp webPage/index.html_installed /var/www/html/indes.html
+cat webPage/index.html | sed "s#%IP%#$(hostname -I | tr -d ' ')#g" > webPage/index.html_installed
+sudo cp webPage/index.html_installed /var/www/html/index.html
 sudo chown www-data.www-data /var/www/html/index.html
 
 echo "Restarting apache..."
