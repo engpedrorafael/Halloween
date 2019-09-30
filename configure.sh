@@ -2,7 +2,7 @@
 
 echo "Installing dependencies..."
 #sudo apt-get update
-sudo apt-get install vim vlc apache2
+sudo apt-get install -y vim vlc apache2 python-serial
 sudo usermod -aG dialout www-data
 sudo usermod -aG sudo www-data
 sudo usermod -aG pulse-access www-data
