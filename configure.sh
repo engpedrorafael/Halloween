@@ -28,4 +28,4 @@ echo "Restarting apache..."
 sudo a2enmod cgi
 sudo service apache2 restart
 
-
+echo "Please restart the PC and access the page:  http://xxx.xxx.xxx.xxx"
