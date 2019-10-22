@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo "Installing dependencies..."
-#sudo apt-get update
-sudo apt-get install -y vim vlc apache2 python-serial
+sudo apt-get update
+sudo apt-get install -y vim vlc apache2 python-serial openssh-server
 sudo usermod -aG dialout www-data
 sudo usermod -aG sudo www-data
 sudo usermod -aG pulse-access www-data
@@ -20,7 +20,7 @@ sudo chmod 755 /usr/lib/cgi-bin
 sudo chown root.root /usr/lib/cgi-bin
 sudo chmod 775 /usr/lib/cgi-bin/page.cgi
 
-cat webPage/index.html | sed "s#%IP%#$(hostname -I | tr -d ' ')#g" > webPage/index.html_installed
+cat webPage/index.html | sed "s#%IP%#$(hostname -I | cut -d ' ' -f 1 | tr -d ' ')#g" > webPage/index.html_installed
 sudo cp webPage/index.html_installed /var/www/html/index.html
 sudo chown www-data.www-data /var/www/html/index.html
 
