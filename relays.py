@@ -37,19 +37,20 @@ class RelayBoard(object):
 
 
 class SeqRelays(RelayBoard):
-    def __init__(self, usb, nRelays = 8):
+    def __init__(self, usb, nRelays = 8, idxs = [1,2,3,4,5,6,7,8]):
         self.nRelays = nRelays
         super(SeqRelays,self).__init__(usb)
-        self.set(0, OFF)
+        self.idx = idxs
+        #self.set(0, OFF)
 
     def walking(self, direction = LEFT, duration = 1, repeat = 1):
         for rep in range(repeat):
             sequence = direction == LEFT and range(1,self.nRelays+1) \
                                           or list(reversed(range(1,self.nRelays+1)))
             for n in sequence:
-                self.set(n, ON)
-                time.sleep(0.01)
-                self.set(n, OFF)
+                self.set(self.idx[n-1], ON)
+                time.sleep(0.1)
+                self.set(self.idx[n-1], OFF)
                 time.sleep(duration)
 
     def filling(self, direction = LEFT, duration = 1, repeat = 1):
@@ -59,16 +60,16 @@ class SeqRelays(RelayBoard):
             sequence = direction == LEFT and range(1,self.nRelays+1) \
                                           or list(reversed(range(1,self.nRelays+1)))
             for n in sequence:
-                self.set(n, state)
+                self.set(self.idx[n-1], state)
                 time.sleep(duration)
 
     def flashing(self, durationOn = 1, durationOff = 1, repeat = 1):
         for rep in range(repeat):
             for n in range(1,self.nRelays+1):
-                self.set(n, ON)
+                self.set(self.idx[n-1], ON)
             time.sleep(durationOn)
             for n in range(1,self.nRelays+1):
-                self.set(n, OFF)
+                self.set(self.idx[n-1], OFF)
             time.sleep(durationOff)
 
  
@@ -127,7 +128,7 @@ class StrobeRelays:
 if __name__ == "__main__":
     DEBUG = False
 
-    relays = SeqRelays("USB1", 4)
+    relays = SeqRelays("USB0",4)
 
     relays.walking(RIGHT, 0.1, 3)
     relays.filling(RIGHT, 0.1, 3)

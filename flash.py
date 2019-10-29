@@ -2,9 +2,12 @@
 
 from relays import *
 
-relays = SeqRelays("USB0", 4)
-relays.flashing(0.0, 0.6, 1000)
+relays = SeqRelays("USB0", 2, [1,4])
+relays.flashing(0.050, 0.150,10)
 
-relays.set(0, OFF)
+relays.set(1, OFF)
+relays.set(2, OFF)
+relays.set(3, OFF)
+relays.set(3, OFF)
 exit(0)
 

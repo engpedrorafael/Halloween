@@ -3,6 +3,9 @@
 from relays import *
 
 relays = SeqRelays("USB0", 4)
-relays.set(0, OFF)
+relays.set(1, OFF)
+relays.set(2, OFF)
+relays.set(3, OFF)
+relays.set(4, OFF)
 exit(0)
 
