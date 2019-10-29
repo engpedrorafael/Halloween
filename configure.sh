@@ -1,5 +1,13 @@
 #!/bin/bash
 
+if [[ $# -eq 1 ]];then
+    IP=$1
+else
+    IP=$(hostname -I | cut -d ' ' -f 1 | tr -d ' ')
+fi
+
+echo "Using IP: ${IP}"
+
 echo "Installing dependencies..."
 sudo apt-get update
 sudo apt-get install -y vim vlc apache2 python-serial openssh-server
@@ -20,7 +28,7 @@ sudo chmod 755 /usr/lib/cgi-bin
 sudo chown root.root /usr/lib/cgi-bin
 sudo chmod 775 /usr/lib/cgi-bin/page.cgi
 
-cat webPage/index.html | sed "s#%IP%#$(hostname -I | cut -d ' ' -f 1 | tr -d ' ')#g" > webPage/index.html_installed
+cat webPage/index.html | sed "s#%IP%#${IP}#g" > webPage/index.html_installed
 sudo cp webPage/index.html_installed /var/www/html/index.html
 sudo chown www-data.www-data /var/www/html/index.html
 
@@ -28,4 +36,4 @@ echo "Restarting apache..."
 sudo a2enmod cgi
 sudo service apache2 restart
 
-echo "Please restart the PC and access the page:  http://xxx.xxx.xxx.xxx"
+echo "Please restart the PC and access the page:  http://${IP}"
