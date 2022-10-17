@@ -10,14 +10,14 @@
              jQuery.get('http://192.168.2.114/cgi-bin/page.cgi?script='+attr);
         }
         function action(attr){
-            jQuery.get('http://%IP%/cgi-bin/page.cgi?action='+attr);
+            jQuery.get('http://192.168.2.114/cgi-bin/page.cgi?action='+attr);
         }
     
         function sound(attr){
-            jQuery.get('http://%IP%/cgi-bin/page.cgi?sound='+attr);
+            jQuery.get('http://192.168.2.114/cgi-bin/page.cgi?sound='+attr);
         }
         function stop(attr){
-            jQuery.get('http://%IP%/cgi-bin/page.cgi?stop='+attr);
+            jQuery.get('http://192.168.2.114/cgi-bin/page.cgi?stop='+attr);
         }
     </script>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
