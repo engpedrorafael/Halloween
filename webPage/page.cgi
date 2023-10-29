@@ -14,10 +14,10 @@ echo "parameter: ${parm[1]}"
 echo "</br>"
 
 if [[ "${parm[0]}" == "action" ]]; then
-    %PATH%/${parm[1]}.py 2>&1
-elif [[ "${parm[0]}" == "script" ]]; then
-    cd %PATH%/
     %PATH%/${parm[1]}.sh 2>&1
+elif [[ "${parm[0]}" == "script" ]]; then
+    cd %PATH%
+    %PATH%/${parm[1]}.sh &>/dev/null
 elif [[ "${parm[0]}" == "sound" ]]; then
     %PATH%/play.sh %PATH%/Sounds/${parm[1]}.mp3 2>&1
 elif [[ "${parm[0]}" == "stop" ]]; then
@@ -27,8 +27,7 @@ elif [[ "${parm[0]}" == "stop" ]]; then
         pkill -f run.sh
     elif [[ "${parm[1]}" == "action" ]]; then
         pkill -f run.sh
-        pkill -f python
-        %PATH%/off.py 2>&1
+	%PATH%/luxoff.sh 2>&1
         pkill -f run.sh
     fi
 else

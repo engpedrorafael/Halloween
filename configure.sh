@@ -10,7 +10,7 @@ echo "Using IP: ${IP}"
 
 echo "Installing dependencies..."
 sudo apt-get update
-sudo apt-get install -y vim vlc apache2 python-serial openssh-server
+sudo apt-get install -y vim vlc apache2 openssh-server curl
 sudo usermod -aG dialout www-data
 sudo usermod -aG sudo www-data
 sudo usermod -aG pulse-access www-data

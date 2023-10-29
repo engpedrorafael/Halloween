@@ -7,7 +7,7 @@
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <script>
         function script(attr){
-             jQuery.get('http://192.168.2.114/cgi-bin/page.cgi?script='+attr);
+             jQuery.get('http://%IP%/cgi-bin/page.cgi?script='+attr);
         }
         function action(attr){
             jQuery.get('http://%IP%/cgi-bin/page.cgi?action='+attr);
@@ -49,10 +49,10 @@
   </tr>
 
   <tr>
-    <td align="center"><input style="width:200px" type="image" src="/images/lightbulb_on.png" onclick="action('fill')"</td>
-    <td align="center"><input style="width:200px" type="image" src="/images/10802304_S.jpg" onclick="action('walk')"</td>
-    <td align="center"><input style="width:200px" type="image" src="/images/stage-spotlight-icon-psd_30-2526.jpg" onclick="action('flash')"</td>
-     <td align="center"><input style="width:200px" type="image" src="/images/script.png" onclick="script('run')"</td>
+    <td align="center"><input style="width:200px" type="image" src="/images/lightbulb_on.png" onclick="action('lux1')"</td>
+    <td align="center"><input style="width:200px" type="image" src="/images/10802304_S.jpg" onclick="action('lux2')"</td>
+    <td align="center"><input style="width:200px" type="image" src="/images/stage-spotlight-icon-psd_30-2526.jpg" onclick="action('lux3')"</td>
+    <td align="center"><input style="width:200px" type="image" src="/images/clock.png" onclick="sound('clock')"</td>
   </tr>
   <tr>
     <td style="height:100px;"></td>
@@ -62,6 +62,7 @@
 
 <table style="width:100%">
   <tr>
+    <td align="center"><input style="width:200px" type="image" src="/images/script.png" onclick="script('run')"</td>
     <td align="center"><input style="width:200px" type="image" src="/images/light_off-512.png" onclick="stop('action')"</td>
     <td align="center"><input style="width:200px" type="image" src="/images/Quiet.png" onclick="stop('sound')"</td>
   </tr>
@@ -69,8 +70,6 @@
     <td style="height:100px;"></td>
   </tr>
 </table>
-<button  style="width:100px; height:100px" onclick="if (confirm('Turn projector ON?')){action('plugOn')}">Proj. ON</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button  style="width:100px; height:100px" onclick="if (confirm('Turn projector OFF?')){action('plugOff')}">Proj. OFF</button> 
   </body>
 
 </html>
